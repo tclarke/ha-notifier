@@ -7,7 +7,8 @@ description = "A simple CLI tool to send a 'notification' MQTT message which Hom
 readme = "README.md"
 repository = "https://github.com/tclarke/ha-notifier"
 license = "MIT OR Apache-2.0"
-keywords = ["command-line-utilities"]
+keywords = ["home-assistant", "mqtt"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 rumqttc = { version = "0.25.1", features = ["url"] }
