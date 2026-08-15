@@ -1,0 +1,14 @@
+[package]
+name = "ha-notifier"
+version = "1.0.0"
+authors = ["Trevor R.H. Clarke <retrev@csh.rit.edu>"]
+edition = "2021"
+description = "A simple CLI tool to send a 'notification' MQTT message which Home Assistant can trigger on to do stuff."
+readme = "README.md"
+repository = "https://github.com/tclarke/ha-notifier"
+license = "MIT OR Apache-2.0"
+keywords = ["command-line-utilities"]
+
+[dependencies]
+rumqttc = { version = "0.25.1", features = ["url"] }
+tokio = { version = "1.53.1", features = ["full", "macros", "rt-multi-thread"] }
