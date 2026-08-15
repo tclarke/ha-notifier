@@ -1,9 +1,11 @@
-= ha-notifier
+# ha-notifier
 
 A simple utility to send an mqtt notification to home assistant which can then trigger a notification.
 
-== Usage
-=== Home Assitant
+## Usage
+
+### Home Assitant
+
 You'll need an MQTT broker such as Mosquitto installed and you'll need a login for your notification tool.
 
 1. **Settings**->**Automations & Scenes**->**Create automation**
@@ -21,7 +23,8 @@ You'll need an MQTT broker such as Mosquitto installed and you'll need a login f
   4. Optional **Title** = A short title of your message is long
 5. Save the notification and test it.
 
-== CLI
+### CLI
+
 1. set env variables (Optional, can use cli args)
   1. **HA_NOTIFIER_URL** The mqtt url. Don't need to set username or password. **client_id** is optional and will default to "ha-notification"
   2. **HA_NOTIFIER_USERNAME** The username you set when creating an mqtt broker login.
@@ -30,7 +33,8 @@ You'll need an MQTT broker such as Mosquitto installed and you'll need a login f
 
 `ha-notifier --help` will show you how to pass url, username, and password on the command line.
 
-== Example
+## Example
+
 Set the notification `target` to "mobile" and `payload` to "claude".
 Set the `title` to "Claude waiting" and the `message` to "Claude is waiting for input from you".
 
