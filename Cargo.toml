@@ -1,6 +1,6 @@
 [package]
 name = "ha-notifier"
-version = "1.0.0"
+version = "1.1.0"
 authors = ["Trevor R.H. Clarke <retrev@csh.rit.edu>"]
 edition = "2021"
 description = "A simple CLI tool to send a 'notification' MQTT message which Home Assistant can trigger on to do stuff."
