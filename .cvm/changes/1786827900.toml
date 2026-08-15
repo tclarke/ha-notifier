@@ -1,0 +1,6 @@
+[update]
+major = []
+minor = ["ha-notifier"]
+patch = []
+pre = false
+summary = "fixed cargo metadata"
