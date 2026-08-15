@@ -1,7 +1,4 @@
-use rumqttc::v5::{
-    mqttbytes::QoS,
-    AsyncClient, Event, Incoming, MqttOptions,
-};
+use rumqttc::v5::{mqttbytes::QoS, AsyncClient, Event, Incoming, MqttOptions};
 use std::{env, error::Error, time::Duration};
 
 fn usage() -> &'static str {
@@ -22,7 +19,9 @@ fn main() -> Result<(), Box<dyn Error>> {
             "--username" | "-n" => username = Some(args.next().ok_or(usage())?),
             "--password" | "-p" => password = Some(args.next().ok_or(usage())?),
             "--" => break,
-            _ if arg.starts_with('-') => return Err(format!("unknown option: {arg}\n{}", usage()).into()),
+            _ if arg.starts_with('-') => {
+                return Err(format!("unknown option: {arg}\n{}", usage()).into())
+            }
             _ => positional.push(arg.clone()),
         }
     }
@@ -42,8 +41,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
     let topic = format!("notification/{subtopic}");
     let mut options = MqttOptions::parse_url(&url)?;
-    options.set_keep_alive(Duration::from_secs(30))
-            .set_client_id("ha-notifier".to_string());
+    options
+        .set_keep_alive(Duration::from_secs(30))
+        .set_client_id("ha-notifier".to_string());
 
     if let Some(username) = username {
         options.set_credentials(username, password.unwrap_or_default());
